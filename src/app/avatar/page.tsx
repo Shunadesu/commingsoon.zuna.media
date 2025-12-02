@@ -3,6 +3,8 @@
 import { useRef, useState } from 'react'
 import Logo from '@/components/Logo'
 import html2canvas from 'html2canvas'
+import SEO from '@/components/SEO'
+import { generateBreadcrumbSchema } from '@/utils/seo'
 
 const variants = [
   { name: 'Round', value: 'round' as const },
@@ -73,8 +75,24 @@ export default function AvatarPage() {
     }
   }
 
+  const structuredData = [
+    generateBreadcrumbSchema([
+      { name: 'Trang chủ', url: 'https://zunaweb.com' },
+      { name: 'Logo Avatar Facebook', url: 'https://zunaweb.com/avatar' }
+    ])
+  ]
+
   return (
-    <main className="min-h-screen bg-black text-white p-8">
+    <>
+      <SEO
+        title="Logo Avatar Facebook"
+        description="Tạo và tải logo tròn Zuna cho avatar Facebook. Chọn từ nhiều kiểu dáng và kích thước khác nhau (180x180, 360x360, 512x512)."
+        keywords="Zuna logo avatar, Facebook avatar, round logo, profile picture, logo download, avatar maker"
+        url="https://zunaweb.com/avatar"
+        type="website"
+        structuredData={structuredData}
+      />
+      <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -159,6 +177,7 @@ export default function AvatarPage() {
         </div>
       </div>
     </main>
+    </>
   )
 }
 

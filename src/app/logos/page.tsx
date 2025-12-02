@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import SEO from '@/components/SEO'
+import { generateBreadcrumbSchema } from '@/utils/seo'
 
 const logoVariants = [
   {
@@ -117,8 +119,24 @@ export default function LogosPage() {
     xl: 'text-8xl'
   }
 
+  const structuredData = [
+    generateBreadcrumbSchema([
+      { name: 'Trang chủ', url: 'https://zunaweb.com' },
+      { name: 'Logo Variants', url: 'https://zunaweb.com/logos' }
+    ])
+  ]
+
   return (
-    <main className="min-h-screen bg-black text-white p-8">
+    <>
+      <SEO
+        title="Logo Variants"
+        description="Xem các biến thể logo Zuna với nhiều kiểu dáng và màu sắc khác nhau. Tải logo tròn, vuông, gradient và nhiều style khác."
+        keywords="Zuna logo, logo variants, logo design, brand identity, logo download, logo styles"
+        url="https://zunaweb.com/logos"
+        type="website"
+        structuredData={structuredData}
+      />
+      <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -181,6 +199,7 @@ export default function LogosPage() {
         </div>
       </div>
     </main>
+    </>
   )
 }
 

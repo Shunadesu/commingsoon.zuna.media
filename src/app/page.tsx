@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import CountdownTimer from '@/components/CountdownTimer'
+import SEO from '@/components/SEO'
+import { generateOrganizationSchema, generateWebsiteSchema } from '@/utils/seo'
 
 const Prism = dynamic(() => import('@/components/Prism'), { ssr: false })
 
@@ -20,8 +22,21 @@ export default function Home() {
     setDaysLeft(days > 0 ? days : 0)
   }, [])
 
+  const structuredData = [
+    generateOrganizationSchema(),
+    generateWebsiteSchema()
+  ]
+
   return (
-    <main className="relative min-h-screen flex items-center justify-center">
+    <>
+      <SEO
+        title="Coming Soon"
+        description="Zuna is coming soon with amazing digital solutions and creative services. Stay tuned for our launch on December 10, 2025 at 10:00 AM."
+        keywords="Zuna, coming soon, digital solutions, web development, creative services, launch, December 2025"
+        type="website"
+        structuredData={structuredData}
+      />
+      <main className="relative min-h-screen flex items-center justify-center">
       {/* Prism Background - Subtle */}
       {mounted && (
         <div className="absolute inset-0 w-full h-full z-0 opacity-30">
@@ -65,6 +80,7 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </>
   )
 }
 

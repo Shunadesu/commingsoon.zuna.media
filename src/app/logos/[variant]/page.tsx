@@ -3,6 +3,8 @@
 import { useParams, useRouter } from 'next/navigation'
 import { useRef, useState } from 'react'
 import html2canvas from 'html2canvas'
+import SEO from '@/components/SEO'
+import { generateBreadcrumbSchema } from '@/utils/seo'
 
 const variants = {
   default: {
@@ -180,8 +182,27 @@ export default function LogoDetailPage() {
     }
   }
 
+  const structuredData = variant ? [
+    generateBreadcrumbSchema([
+      { name: 'Trang chủ', url: 'https://zunaweb.com' },
+      { name: 'Logo Variants', url: 'https://zunaweb.com/logos' },
+      { name: variant.name, url: `https://zunaweb.com/logos/${variantKey}` }
+    ])
+  ] : []
+
   return (
-    <main className="min-h-screen bg-black text-white p-8">
+    <>
+      {variant && (
+        <SEO
+          title={variant.name}
+          description={`Tải logo ${variant.name} của Zuna với chất lượng cao. Logo ${variant.shape === 'rounded-full' ? 'tròn' : 'vuông'} phù hợp cho avatar, branding và nhiều mục đích khác.`}
+          keywords={`Zuna logo ${variant.name}, ${variant.name} logo, logo download, brand logo, ${variant.shape === 'rounded-full' ? 'round logo' : 'square logo'}`}
+          url={`https://zunaweb.com/logos/${variantKey}`}
+          type="website"
+          structuredData={structuredData}
+        />
+      )}
+      <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -228,6 +249,7 @@ export default function LogoDetailPage() {
         </div>
       </div>
     </main>
+    </>
   )
 }
 
