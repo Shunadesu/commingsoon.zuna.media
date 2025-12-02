@@ -62,8 +62,8 @@ export default function Home() {
       <div className="relative z-10 text-center px-4 sm:px-6">
         {/* Logo */}
         <div className="mb-2 sm:mb-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter text-white transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:via-purple-400 hover:to-pink-400 group inline-flex items-center">
-            Zuna<span className="inline-block ml-1 sm:ml-2 bg-gradient-to-b from-cyan-400 via-pink-400 to-purple-400 transition-all duration-300" style={{ width: '6px', height: '48px', borderRadius: '3px' }}></span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter text-white transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-400 hover:via-purple-400 hover:to-pink-400 group">
+            Zuna<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 transition-all duration-300 group-hover:from-cyan-300 group-hover:via-purple-300 group-hover:to-pink-300">.</span>
           </h1>
         </div>
 

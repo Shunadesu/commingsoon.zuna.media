@@ -178,17 +178,14 @@ export default function LogosPage() {
                 className={`${variant.shape} ${variant.bgColor} ${variant.className} ${variant.shape === 'rounded-full' ? 'w-32 h-32 aspect-square' : ''} flex items-center justify-center transition-all duration-300 hover:scale-105`}
               >
                 <span
-                  className={`${sizeClasses[selectedSize]} font-bold tracking-tighter ${variant.textColor} transition-all duration-300 group inline-flex items-center`}
+                  className={`${sizeClasses[selectedSize]} font-bold tracking-tighter ${variant.textColor} transition-all duration-300 group`}
                 >
                   Zuna
                   <span
-                    className={`inline-block ml-1 bg-gradient-to-b from-cyan-400 via-pink-400 to-purple-400 transition-all duration-300`}
-                    style={{
-                      width: selectedSize === 'sm' ? '3px' : selectedSize === 'md' ? '5px' : selectedSize === 'lg' ? '7px' : '9px',
-                      height: selectedSize === 'sm' ? '24px' : selectedSize === 'md' ? '32px' : selectedSize === 'lg' ? '48px' : '64px',
-                      borderRadius: selectedSize === 'sm' ? '1.5px' : selectedSize === 'md' ? '2.5px' : selectedSize === 'lg' ? '3.5px' : '4.5px'
-                    }}
-                  />
+                    className={`text-transparent bg-clip-text bg-gradient-to-r ${variant.dotColor} transition-all duration-300`}
+                  >
+                    .
+                  </span>
                 </span>
               </div>
 

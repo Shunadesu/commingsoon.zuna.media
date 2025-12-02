@@ -224,17 +224,14 @@ export default function LogoDetailPage() {
             className={`${variant.shape} ${variant.bgColor} ${variant.className} flex items-center justify-center transition-all duration-300`}
           >
             <span
-              className={`text-8xl font-bold tracking-tighter ${variant.textColor} transition-all duration-300 inline-flex items-center`}
+              className={`text-8xl font-bold tracking-tighter ${variant.textColor} transition-all duration-300`}
             >
               Zuna
               <span
-                className={`inline-block ml-2 bg-gradient-to-b from-cyan-400 via-pink-400 to-purple-400 transition-all duration-300`}
-                style={{
-                  width: '12px',
-                  height: '96px',
-                  borderRadius: '6px'
-                }}
-              />
+                className={`text-transparent bg-clip-text bg-gradient-to-r ${variant.dotColor} transition-all duration-300`}
+              >
+                .
+              </span>
             </span>
           </div>
 

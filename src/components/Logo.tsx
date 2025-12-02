@@ -64,18 +64,15 @@ const Logo = forwardRef<HTMLDivElement, LogoProps>(
         }}
       >
         <span
-          className={`font-bold tracking-tighter ${currentVariant.text} transition-all duration-300 inline-flex items-center`}
+          className={`font-bold tracking-tighter ${currentVariant.text} transition-all duration-300`}
           style={{ fontSize: `${fontSize}px` }}
         >
           Zuna
           <span
-            className={`inline-block ml-1 bg-gradient-to-b from-cyan-400 via-pink-400 to-purple-400 transition-all duration-300`}
-            style={{
-              width: `${fontSize * 0.15}px`,
-              height: `${fontSize * 1.2}px`,
-              borderRadius: `${fontSize * 0.075}px`
-            }}
-          />
+            className={`text-transparent bg-clip-text bg-gradient-to-r ${currentVariant.dot} transition-all duration-300`}
+          >
+            .
+          </span>
         </span>
       </div>
     )
